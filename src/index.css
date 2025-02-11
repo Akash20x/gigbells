@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body{
+  height: 100%;
+}
+
+.get-in {
+  background-color: #E21DCB;
+  background-image: linear-gradient(106deg, #E21DCB 0%, #B12FD0 48%, #801BD7 100%, #DB0F0F 100%);
+  background-origin: padding-box;
+  background-repeat: no-repeat;
+}
+
+
+
+.app-container {
+  background-color: rgba(250, 246, 240, 1);
+  min-height: 100vh;
+}
+
+
+.rad-hero {
+  border-radius: 50px;
+}
+
+
+.hover\:shadow-dark-glow:hover {
+  box-shadow: 0 2px 4px 0 rgba(128, 88, 204, 0.3), 0 5px 15px 0 rgba(76, 29, 101, 0.25);
+}
+
+.transition-all {
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.hero-background {
+  background: linear-gradient(rgb(248, 245, 241), #f8ebfe);
+  opacity: 0.9;
+}
+
+
+
+.transitions-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+
+.font-quill .ql-editor {
+  font-size: 18px;
+  line-height: 1.6; 
+  font-weight: normal;
+  text-align: center;
+}
+
+.ql-editor ul{
+  padding-left: 0px;
+}
+
+.font-quill-normal .ql-editor {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.font-quill-normal-center .ql-editor {
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center;
+}
+
+
+.font-quill-medium .ql-editor {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.font-quill-normal-ns .ql-editor {
+  font-size: 16px;
+  padding: 0px;
+  font-weight: normal;
+}
+
+.font-quill-text-image .ql-editor {
+  font-size: 16px; 
+  line-height: normal;
+  font-weight: normal;
+  padding: 0px 10px;
+  text-align: center;
+}
+
+
+.font-quill-heading{
+  width: fit-content;
+}
+
+.font-quill-heading .ql-editor {
+  font-size: 22px; 
+  line-height: 1.6; 
+  font-weight:bold;
+  color: #404040;
+  padding: 0px;
+}
+
+
+
+
+
+
+
+
+
+
