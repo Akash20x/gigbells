@@ -73,8 +73,8 @@ const SignUp = () => {
             <div className="flex flex-col min-h-screen">
                 <div className="w-full">
                     <header className="relative inset-x-0 top-0 z-50">
-                        <div className="relative flex md:hidden py-4 w-full"></div>
-                        <nav className={` ${isHeaderBg ? 'bg-white': ''} fixed md:relative w-full top-0 flex items-center justify-between py-6 px-6 max-w-5xl mx-auto`}>
+                        <div className="relative flex md:hidden py-4 w-full"></div> 
+                        <nav className={` ${isHeaderBg ? 'bg-white md:bg-transparent': ''} fixed md:relative w-full top-0 flex items-center justify-between py-6 px-6 max-w-5xl mx-auto`}>
                         
                             <h2 className="text-2xl font-semibold">Gigbells</h2>
                             <div className="hidden md:flex md:flex-1 md:gap-x-8 md:justify-end">
