@@ -27,7 +27,7 @@ const Header = () => {
   
   
     useEffect(() => {
-      if (error === "Token Expired") {
+      if (error === "Token Expired" || error === "Invalid token") {
           dispatch(logOut());
       }
     }, [error, dispatch]);
