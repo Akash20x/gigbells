@@ -73,14 +73,14 @@ const userSlice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        logOut() {
+        logOut(state) {
             localStorage.removeItem("token")
             state.token = null;
         },
         setAbout(state, action) {
             state.about = action?.payload
         },
-        setProfileSkill(state,action ){
+        setProfileSkill(state,action ){ 
             const { skill } = action.payload;
 
             state.profile = {
