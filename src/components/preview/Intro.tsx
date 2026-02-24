@@ -20,7 +20,7 @@ const Intro = () => {
 
     const state = useSelector((state: { user: User }) => state.user);
 
-    const { profile, profileImage, isLogged } = state;
+    const { profile, profileImage, token } = state;
     
     const [previewSrc, setPreviewSrc] = useState<string | null>(null);
 
@@ -67,7 +67,7 @@ const Intro = () => {
     <>
         <div className="relative z-10 max-w-7xl mx-auto">
             
-            {!isLogged && <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-between mx-auto container md:px-40 text-sm font-semibold gap-2 lg:gap-10 py-6">
+            {!token && <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-between mx-auto container md:px-40 text-sm font-semibold gap-2 lg:gap-10 py-6">
                 <Link
                     to={`/${username}/contact`}
                     className="get-in  text-white text-lg font-semibold px-8 rounded-full py-2"

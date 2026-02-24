@@ -106,7 +106,7 @@ export interface User {
     loading: boolean;
     previewLoading: boolean;
     error: string | null;
-    isLogged: boolean;
+    token: string | null;
     about: string;
     positions: Position[];
     educationItems: Education[];

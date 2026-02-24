@@ -11,7 +11,7 @@ const Header = () => {
     const location = useLocation();
     const dispatch = useDispatch<AppDispatch>();
     const state = useSelector((state: { user: User }) => state.user);
-    const { profile, isLogged, error } = state;
+    const { profile, token, error } = state;
     const navigate = useNavigate();
 
     const handleLogout = () => {
@@ -20,10 +20,10 @@ const Header = () => {
     };
 
     useEffect(() => {
-        if(!isLogged){
-            dispatch(fetchUserInfo()); 
-        }
-    }, [dispatch, isLogged]);
+    if (token && !profile?.userName) {
+        dispatch(fetchUserInfo());
+    }
+    }, [dispatch, token, profile?.userName]);
   
   
     useEffect(() => {
@@ -54,7 +54,7 @@ const Header = () => {
 
     return (
         <>
-            {isLogged && (
+            {token && (
                 <div className="w-full md:pb-0 pb-8 z-0">
                     <header className="relative inset-x-0 top-0">
                         <div className="relative flex md:hidden py-4 w-full"></div>

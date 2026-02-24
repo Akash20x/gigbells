@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { signIn } from "../services/authServices";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
 import ToastNotification from "./ToastNotification";
-import { User } from "../misc/types";
 import { AppDispatch } from "../redux/store";
 
 const SignIn = () => {
@@ -16,19 +14,11 @@ const SignIn = () => {
     
     const dispatch = useDispatch<AppDispatch>();
 
-    const state = useSelector((state: { user: User }) => state.user);  
-
-    const { error } = state;
 
     const navigate = useNavigate();
 
     const [menuOpen, setMenuOpen] = useState(false);
 
-    useEffect(() => {
-        if (error) {
-            ToastNotification(error);
-        }
-    }, [error]); 
   
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -55,9 +45,10 @@ const SignIn = () => {
             navigate('/dashboard'); 
         }
 
-        if(error){
-            ToastNotification(error)
-        } 
+        if (signIn.rejected.match(result)) {
+            const error = result.payload as { message?: string };
+            ToastNotification(error?.message || "Sign In failed");
+        }
         
     };
       

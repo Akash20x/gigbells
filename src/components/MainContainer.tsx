@@ -1,18 +1,19 @@
 import { Outlet } from "react-router-dom"
-import RedirectLoggedInUser from "./RedirectLoggedInUser";
 import Header from "./Header";
+import ProtectedRoute from "./ProtectedRoute";
 
 
 const MainContainer = () => {
   
   return (
     <>
-    <RedirectLoggedInUser>
+    <ProtectedRoute>
       <Header />
       <Outlet /> 
-    </RedirectLoggedInUser>
+    </ProtectedRoute>
     </>
   )
 }
 
 export default MainContainer
+ 

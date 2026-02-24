@@ -7,13 +7,13 @@ const initialState: User = {
     loading: false,
     previewLoading: false,
     error: null, 
-    isLogged: false,
+    token: localStorage.getItem("token"),
     profile: {
         name: '',
         description: '',
         location: '',        
         skills: [],
-        social: [],
+        social: [], 
         userName: ''
     },
     profileImage: '',
@@ -75,6 +75,7 @@ const userSlice = createSlice({
     reducers: {
         logOut() {
             localStorage.removeItem("token")
+            state.token = null;
         },
         setAbout(state, action) {
             state.about = action?.payload
@@ -319,7 +320,7 @@ const userSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(signUp.fulfilled, (state, action) => {  
             localStorage.setItem("token", action.payload.token)
-            state.isLogged = true
+            state.token = action.payload.token;
             state.error = null
         })
         builder.addCase(signUp.rejected, (state, action) => {  
@@ -328,7 +329,7 @@ const userSlice = createSlice({
 
         builder.addCase(signIn.fulfilled, (state, action) => {
             localStorage.setItem("token", action.payload.token);  
-            state.isLogged = true
+            state.token = action.payload.token;
             state.error = null   
         })
 
@@ -363,8 +364,7 @@ const userSlice = createSlice({
             state.error = null
             const payload = action.payload;
             state.profile.userName = payload?.user?.userName
-            state.isLogged = payload?.user?.userName ? true: false            
-        })
+        }) 
         builder.addCase(fetchUserInfo.rejected, (state, action) => {
             state.loading = false;
             state.error = (action.payload as AxiosErrorResponse).message;
