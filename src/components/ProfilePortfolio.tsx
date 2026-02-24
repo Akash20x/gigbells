@@ -219,7 +219,7 @@ const ProfilePortfolio = () => {
                                 <div className="w-full border-2 rounded-2xl px-4 sm:px-6 py-2 sm:py-3 flex flex-col focus-within:border-black">
                                     <label className="text-sm" htmlFor="collection_name">Name</label>
                                     <input
-                                        className="sm:text-md disabled:bg-gray-100 disabled:cursor-not-allowed focus:outline-0"
+                                        className="sm:text-md disabled:bg-gray-100 disabled:cursor-not-allowed outline-none"
                                         autoFocus
                                         type="text"
                                         id="collection_name"
@@ -283,7 +283,7 @@ const ProfilePortfolio = () => {
                                     <div className="w-full border-2 rounded-2xl px-4 sm:px-6 py-2 sm:py-3 flex flex-col focus-within:border-black">
                                         <label className="text-sm" htmlFor="rename_collection_name">Name</label>
                                         <input
-                                            className="sm:text-md disabled:bg-gray-100 disabled:cursor-not-allowed focus:outline-0"
+                                            className="sm:text-md disabled:bg-gray-100 disabled:cursor-not-allowed outline-none"
                                             autoFocus
                                             type="text"
                                             id="rename_collection_name"

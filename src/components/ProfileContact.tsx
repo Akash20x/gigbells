@@ -65,7 +65,7 @@ const ProfileContact = () => {
           <input
               type="email"
               name="responseEmail"
-              className="border border-black w-full md:w-[20rem] my-2"
+              className="border border-black w-full md:w-[20rem] my-2 px-2" 
               value={formData.responseEmail}
               onChange={handleChange}
               required

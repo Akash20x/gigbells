@@ -77,7 +77,7 @@ const ProfileImage = ({ profileData }: { profileData: ProfileData }) => {
                                 />
                             ) : (
                                 <>
-                                    <div className="absolute hidden group-hover:flex w-full h-full justify-center items-center self-center uppercase text-sm font-bold text-gray-700">
+                                    <div className="absolute top-0 hidden group-hover:flex w-full h-full justify-center items-center self-center uppercase text-sm font-bold text-gray-700">
                                         Add a photo
                                     </div>
                                     <img src={defaultImg} className="h-full w-full" />

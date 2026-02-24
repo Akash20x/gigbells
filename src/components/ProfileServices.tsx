@@ -91,7 +91,7 @@ const ProfileServices = () => {
                                     <div className="uppercase text-gray-300 text-sm mt-4">
                                         {service.feeType === 'Fixed fee' ? 'Starting at' : ''}
                                     </div>
-                                    <div className="text-2xl">
+                                    <div className="text-xl">
                                         {service.feeType === 'Fixed fee' ? `${service.fixedCost.currency === 'INR' ? '₹' : '$'}${service.fixedCost.cost}/${service.fixedCost.durationType}` : 'Contact for pricing'}
                                     </div>
                                 </div>

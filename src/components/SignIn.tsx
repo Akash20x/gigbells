@@ -54,6 +54,10 @@ const SignIn = () => {
         if (signIn.fulfilled.match(result)) {
             navigate('/dashboard'); 
         }
+
+        if(error){
+            ToastNotification(error)
+        } 
         
     };
       

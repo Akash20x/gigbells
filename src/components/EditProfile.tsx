@@ -80,7 +80,7 @@ const EditProfile = ({ profile, setProfile, handleClose }: EditProfileProps) => 
               <div className="w-full border-2 rounded-2xl px-4 sm:px-6 py-2 sm:py-3 flex flex-col focus-within:border-black">
                 <label className="text-sm" htmlFor="name">Full name</label>
                 <input
-                  className="sm:text-md disabled:bg-gray-100 disabled:cursor-not-allowed focus:outline-0"
+                  className="sm:text-md disabled:bg-gray-100 disabled:cursor-not-allowed outline-none"
                   autoFocus
                   type="text"
                   name="name"
@@ -91,7 +91,7 @@ const EditProfile = ({ profile, setProfile, handleClose }: EditProfileProps) => 
               <div className="w-full border-2 rounded-2xl px-4 sm:px-6 py-2 sm:py-3 flex flex-col focus-within:border-black">
                 <label className="text-sm" htmlFor="description">Bio</label>
                 <textarea
-                  className="sm:text-md disabled:bg-gray-100 disabled:cursor-not-allowed focus:outline-0"
+                  className="sm:text-md disabled:bg-gray-100 disabled:cursor-not-allowed outline-none"
                   rows={4}
                   name="description"
                   value={profile.description}
