@@ -80,7 +80,7 @@ const EditService = () => {
                         <div className="w-full border-2 rounded-2xl px-4 sm:px-6 py-2 sm:py-3 flex flex-col focus-within:border-black">
                             <label className="text-sm" htmlFor="service_name">Service name</label>
                             <input
-                                className="sm:text-md disabled:bg-gray-100 disabled:cursor-not-allowed outline-none"
+                                className="sm:text-md outline-none"
                                 autoFocus
                                 type="text"
                                 name="name"
@@ -93,7 +93,7 @@ const EditService = () => {
                         <div className="w-full border-2 rounded-2xl px-4 sm:px-6 py-2 sm:py-3 flex flex-col">
                             <label className="text-sm" htmlFor="fee_type">Fee Type</label>
                             <select
-                                className="sm:text-md disabled:bg-gray-100 disabled:cursor-not-allowed focus:outline-0"
+                                className="sm:text-md"
                                 name="feeType"
                                 id="feeType"
                                 value={editService.feeType}
@@ -105,11 +105,11 @@ const EditService = () => {
                         </div>
                         {editService.feeType === 'Fixed fee' && (
                             <div className="flex flex-col sm:flex-row gap-4">
-                                <div className="w-full border-2 rounded-2xl px-4 sm:px-6 py-2 sm:py-3 flex flex-col">
+                                <div className="w-full border-2 rounded-2xl px-4 sm:px-6 py-2 sm:py-3 flex flex-col ">
                                     <div className="flex flex-row gap-x-3">
                                         <div className="w-1/4 flex flex-col justify-center font-bold text-gray-600">
                                             <select
-                                                className="sm:text-md disabled:bg-gray-100 disabled:cursor-not-allowed focus:outline-0"
+                                                className="sm:text-md"
                                                 name="currency"
                                                 id="currency"
                                                 value={editService.fixedCost?.currency || 'INR'}
@@ -122,9 +122,9 @@ const EditService = () => {
                                         <div className="flex flex-grow flex-col">
                                             <label className="text-sm" htmlFor="cost">Price (starting at)</label>
                                             <input
-                                                className="sm:text-md disabled:bg-gray-100 disabled:cursor-not-allowed focus:outline-0 px-2"
+                                                className="sm:text-md px-2"
                                                 autoFocus
-                                                type="text"
+                                                type="number"
                                                 name="cost"
                                                 id="cost"
                                                 required
@@ -137,7 +137,7 @@ const EditService = () => {
                                 <div className="w-full border-2 rounded-2xl px-4 sm:px-6 py-2 sm:py-3 flex flex-col">
                                     <label className="text-sm" htmlFor="durationType">Per</label>
                                     <select
-                                        className="sm:text-md disabled:bg-gray-100 disabled:cursor-not-allowed focus:outline-0"
+                                        className="sm:text-md"
                                         name="durationType"
                                         id="durationType"
                                         value={editService.fixedCost.durationType || ''}

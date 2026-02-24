@@ -6,12 +6,10 @@ import ProtectedRoute from "./ProtectedRoute";
 const MainContainer = () => {
   
   return (
-    <>
     <ProtectedRoute>
-      <Header />
+      <Header /> 
       <Outlet /> 
     </ProtectedRoute>
-    </>
   )
 }
 
