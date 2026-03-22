@@ -320,8 +320,7 @@ const userSlice = createSlice({
     extraReducers: (builder) => {
         builder.addCase(signUp.fulfilled, (state, action) => {  
             localStorage.setItem("token", action.payload.token)
-            state.token = action.payload.token;
-            state.error = null
+            return { ...initialState, token: action.payload.token }
         })
         builder.addCase(signUp.rejected, (state, action) => {  
             state.error = (action.payload as AxiosErrorResponse).message;
@@ -329,8 +328,7 @@ const userSlice = createSlice({
 
         builder.addCase(signIn.fulfilled, (state, action) => {
             localStorage.setItem("token", action.payload.token);  
-            state.token = action.payload.token;
-            state.error = null   
+            return { ...initialState, token: action.payload.token }
         })
 
         builder.addCase(signIn.rejected, (state, action) => {
