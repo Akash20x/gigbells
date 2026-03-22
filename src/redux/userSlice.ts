@@ -318,7 +318,7 @@ const userSlice = createSlice({
 
     },
     extraReducers: (builder) => {
-        builder.addCase(signUp.fulfilled, (state, action) => {  
+        builder.addCase(signUp.fulfilled, (_, action) => {  
             localStorage.setItem("token", action.payload.token)
             return { ...initialState, token: action.payload.token }
         })
@@ -326,7 +326,7 @@ const userSlice = createSlice({
             state.error = (action.payload as AxiosErrorResponse).message;
         })
 
-        builder.addCase(signIn.fulfilled, (state, action) => {
+        builder.addCase(signIn.fulfilled, (_, action) => {
             localStorage.setItem("token", action.payload.token);  
             return { ...initialState, token: action.payload.token }
         })
