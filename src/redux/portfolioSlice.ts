@@ -48,6 +48,9 @@ const portfolioSlice = createSlice({
         setPortfolio(state, action){
             state.collections = action?.payload
         },
+        resetPortfolio(state) {
+            state.collections = []
+        },
         setShowCollectionModal(state,action){
             state.showCollectionModal = action.payload
         },
@@ -257,6 +260,7 @@ export const {
     setNewCollectionName, 
     saveNewCollection, 
     setPortfolio,
+    resetPortfolio,
     setShowCollectionModal,
     setShowRenameCollectionModal,
     setSelectedCollectionIndex,

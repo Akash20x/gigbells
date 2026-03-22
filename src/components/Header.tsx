@@ -5,6 +5,7 @@ import { logOut } from "../redux/userSlice";
 import { User } from "../misc/types";
 import { fetchUserInfo } from "../services/authServices";
 import { AppDispatch } from "../redux/store";
+import { resetPortfolio } from "../redux/portfolioSlice";
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -16,6 +17,7 @@ const Header = () => {
 
     const handleLogout = () => {
         dispatch(logOut());
+        dispatch(resetPortfolio()) 
         navigate('/sign-in');
     };
 
